@@ -15,6 +15,7 @@ import { EvilIcons } from "@expo/vector-icons";
 const HomeScreen = () => {
   const [bookData, setBookData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   const getUserData = async () => {
     const url = "https://books-list-api.vercel.app/books";
@@ -67,7 +68,8 @@ const HomeScreen = () => {
             }}
           />
           <TextInput
-            onChangeText={(text) => console.log(text)}
+            onChangeText={setSearch}
+            value={search}
             placeholder="Search"
             style={{
               fontSize: 16,
@@ -85,7 +87,9 @@ const HomeScreen = () => {
           </View>
         ) : (
           <FlatList
-            data={bookData?.data}
+            data={bookData?.data.filter((item) =>
+              item.title.toLowerCase().includes(search.toLowerCase())
+            )}
             renderItem={({ item }) => (
               <View
                 style={{
