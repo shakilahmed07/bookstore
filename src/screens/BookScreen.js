@@ -5,7 +5,6 @@ import { Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 
 const BookScreen = ({ route, navigation }) => {
   const { item } = route.params;
-  console.log(item);
   return (
     <SafeAreaView>
       <TouchableOpacity

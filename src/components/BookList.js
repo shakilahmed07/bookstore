@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,11 +10,6 @@ const BookList = ({ item }) => {
         navigation.navigate("Book", {
           item: item,
         })
-      }
-      style={
-        {
-          // backgroundColor: "red",
-        }
       }
     >
       <Image
@@ -69,5 +64,3 @@ const BookList = ({ item }) => {
 };
 
 export default BookList;
-
-const styles = StyleSheet.create({});

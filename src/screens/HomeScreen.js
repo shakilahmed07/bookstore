@@ -32,7 +32,6 @@ const HomeScreen = () => {
       const bookData = await response.json();
       setBookData(bookData);
       setIsLoading(false);
-      // console.log("data --->", bookData.data);
     } catch (error) {
       console.log(error);
     }
